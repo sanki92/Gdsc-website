@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import calendarIcon from "../../assets/Events/eventIcon.png";
 import eventsData from "./eventsDetail";
 import EventModal from "./EventModal";
+import Header from "../otherComponents/navbar";
+import Footer from "../otherComponents/footer";
 
 
 const Events = (event) => {
@@ -13,7 +15,10 @@ const Events = (event) => {
         setModalData(event)
     }
   return (
-    <div className="bg-img flex flex-col justify-center items-center gap-y-20">
+    <>
+    <div className="bg-img">
+    <Header/>
+    <div className="flex flex-col justify-center items-center gap-y-20">
         {
             isModalOpen && <EventModal modalData={modalData} setIsModalOpen={setIsModalOpen}/>
         }
@@ -39,6 +44,10 @@ const Events = (event) => {
         );
       })}
     </div>
+    <Footer/>
+    </div>
+
+    </>
   );
 };
 
