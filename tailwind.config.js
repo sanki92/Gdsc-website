@@ -34,6 +34,8 @@ module.exports = {
 
       'mgM': {'max': '1000px'},    
 
+      'mhM':{'max':'876px'},
+
       'mdM': {'max': '767px'},
       // => @media (max-width: 767px) { ... }
 

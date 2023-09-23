@@ -17,7 +17,7 @@ function Header() {
 
   return (
     <>
-      <div>
+      <div className='mdM:pb-10'>
         <ul className='text-[#5F6368] text-xl mhM:text-base font-medium flex justify-between items-center px-[6vw] mhM:px-2 py-8  mdM:p-0 mdM:flex-col mdM:fixed mdM:w-full'>
           <li className=' mdM:w-full mdM:flex mdM:justify-between mdM:bg-white mdM:p-3'><img src={logo} className=' cursor-pointer w-[10vw] mr-5 mhM:mr-3 mdM:w-[5rem]' alt="" /> { !menuOpen?<RxHamburgerMenu onClick={()=>setMenuOpen(true)} className='text-2xl hidden mdM:block'/>: <RxCross1  className='text-2xl hidden mdM:block' onClick={()=>setMenuOpen(false)}/>}</li>
          <div className={`flex justify-around items-center w-full mdM:flex-col ${!menuOpen?"mdM:scale-y-0":"mdM:bg-white"} mdM:origin-top mdM:transition mdM:duration-300`}>
