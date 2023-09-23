@@ -1,22 +1,39 @@
 import React, { useState } from 'react';
 import logo from '../../assets/GDSC-LOGO.png';
 import mitLogo from '../../assets/mitadtlogo.png';
+import {RxHamburgerMenu, RxCross1} from 'react-icons/rx'
 import { Link } from 'react-scroll';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  // const closeMenu = () => {
+  //   setMenuOpen(false);
+  // };
 
   return (
-    <header className={`header p-10 relative ${menuOpen ? 'overflow-hidden' : ''}`}>
-      <div className={`sticky top-0 z-50 bg-white ${menuOpen ? 'md:shadow-lg' : ''}`}>
+    <>
+      <div>
+        <ul className='text-[#5F6368] text-xl mhM:text-base font-medium flex justify-between items-center px-[6vw] mhM:px-2 py-8  mdM:p-0 mdM:flex-col mdM:fixed mdM:w-full'>
+          <li className=' mdM:w-full mdM:flex mdM:justify-between mdM:bg-white mdM:p-3'><img src={logo} className=' cursor-pointer w-[10vw] mr-5 mhM:mr-3 mdM:w-[5rem]' alt="" /> { !menuOpen?<RxHamburgerMenu onClick={()=>setMenuOpen(true)} className='text-2xl hidden mdM:block'/>: <RxCross1  className='text-2xl hidden mdM:block' onClick={()=>setMenuOpen(false)}/>}</li>
+         <div className={`flex justify-around items-center w-full mdM:flex-col ${!menuOpen?"mdM:scale-y-0":"mdM:bg-white"} mdM:origin-top mdM:transition mdM:duration-300`}>
+          <li className='mdM:mb-3'> <a href="#aboutus">About Us</a></li>
+          <li className='mdM:my-3'> <a href="#tech">Technologies</a></li>
+          <li className='mdM:my-3'> <a href="#ourteam">Team</a></li>
+          <li className='mdM:my-3'> <a href="#events">Our Events</a></li>
+          <li className='mdM:my-3'> <a href="#contact">Contact Us</a></li>
+         </div>
+          
+          
+          <li><img src={mitLogo} className=' w-[6vw] ml-5 mhM:ml-3 mdM:hidden'  /></li>
+        </ul>
+    </div>
+    {/* <header className={`header p-10 relative ${menuOpen ? 'overflow-hidden' : ''}`}>
+      <div className={`sticky top-0 z-50  ${menuOpen ? 'md:shadow-lg' : ''}`}>
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-36 ">
             <img src={logo} width={100} alt="" />
@@ -98,7 +115,6 @@ function Header() {
           />
         </div>
       </div>
-
       {menuOpen && (
         <div
           className={`nav-dropdown fixed top-0 left-0 w-full h-full flex flex-col items-center justify-center space-y-8 p-4 bg-white text-gray-800 transform transition-all ease-in-out ${
@@ -147,7 +163,10 @@ function Header() {
           </div>
         </div>
       )}
-    </header>
+    </header> */}
+    
+    </>
+
   );
 }
 
